@@ -1,0 +1,122 @@
+/* General Animation Settings */
+@keyframes transitionIn-X {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Apply animations on the entire container */
+.container {
+  animation: transitionIn-X 0.5s ease-out;
+}
+
+/* Animation for the brand section */
+.brand-section {
+  animation: fadeIn 0.6s ease-in-out;
+  animation-delay: 0.2s;
+}
+
+/* Animation for the form section */
+.form-section {
+  animation: slideInFromBottom 0.6s ease-in-out;
+  animation-delay: 0.4s;
+}
+
+/* Input Fields Animation */
+.form-input {
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  transform: translateY(-3px);
+  border-color: #007BFF;
+}
+
+/* Error Message Animation */
+.error-message {
+  animation: fadeIn 0.5s ease-out;
+  animation-delay: 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.error-message.show {
+  opacity: 1;
+}
+
+/* Button Animations */
+.login-btn {
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Signup Link Hover Animation */
+.signup-link a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.signup-link a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #007BFF;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.signup-link a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Animation for elements entering from the top */
+@keyframes slideInFromTop {
+  0% {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+h2.welcome-text {
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+p.instruction-text {
+  animation: slideInFromTop 0.5s ease-out;
+  animation-delay: 0.2s;
+}
